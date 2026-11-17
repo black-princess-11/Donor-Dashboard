@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+.donor-hero {
+  background: linear-gradient(135deg, #fff5f5, #ffffff);
+  padding: 50px 0;
+}
+
+.donor-hero h1 {
+  line-height: 1.2;
+}
+
+.donor-hero img {
+  max-height: 430px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.stat-card {
+  padding: 25px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  height: 100%;
+}
+
+.stat-card h2 {
+  margin-bottom: 10px;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.navbar .nav-link.active {
+  color: #dc3545;
+  font-weight: 700;
+}
+
+.navbar .nav-link:hover {
+  color: #dc3545;
+}
+
+.card {
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    padding: 15px 0;
+    align-items: stretch !important;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .navbar-nav .btn {
+    margin-top: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .donor-hero {
+    text-align: center;
+  }
+
+  .donor-hero h1 {
+    font-size: 2.5rem;
   }
 }
