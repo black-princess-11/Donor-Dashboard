@@ -1,0 +1,254 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #252525;
+  background: #fff;
+}
+
+.navbar-brand {
+  letter-spacing: -1px;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: #dc3545;
+}
+
+.blood-hero {
+  padding: 85px 0;
+  background: linear-gradient(120deg, #fff0f0, #fff);
+}
+
+.hero-badge {
+  background: #ffe0e0;
+  color: #dc3545;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.hero-image {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.stat-card {
+  padding: 30px 15px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+  height: 100%;
+}
+
+.blood-group-card {
+  display: block;
+  text-decoration: none;
+  color: #dc3545;
+  text-align: center;
+  background: white;
+  border-radius: 15px;
+  padding: 25px 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.blood-group-card:hover {
+  transform: translateY(-7px);
+  background: #dc3545;
+  color: white;
+}
+
+.blood-group-card h3 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.blood-drop {
+  font-size: 30px;
+}
+
+.step-card {
+  height: 100%;
+  padding: 30px 20px;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.step-number {
+  color: #dc3545;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.emergency-section {
+  background: #dc3545;
+  color: white;
+}
+
+.blood-label {
+  background: #ffe0e0;
+  color: #dc3545;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 10px;
+}
+
+.donor-card {
+  transition: 0.3s;
+}
+
+.donor-card:hover {
+  transform: translateY(-5px);
+}
+
+.blood-footer {
+  background: #252525;
+  color: #ddd;
+}
+
+.blood-footer h5 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.blood-footer a {
+  display: inline-block;
+  color: #ddd;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.blood-footer a:hover {
+  color: #ff6b78;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    padding: 15px 0;
+    align-items: stretch !important;
+  }
+
+  .navbar-nav .btn {
+    margin-top: 10px;
+  }
+
+  .blood-hero {
+    text-align: center;
+    padding: 55px 0;
+  }
+
+  .hero-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .blood-hero h1 {
+    font-size: 38px;
+  }
+
+  .hero-image {
+    height: 250px;
+  }
+}
+/* HOME PAGE ANIMATIONS ONLY */
+
+.home-page {
+  animation: homeFadeIn 0.8s ease-in-out;
+}
+
+@keyframes homeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-page h1,
+.home-page h2 {
+  animation: headingSlide 0.9s ease;
+}
+
+@keyframes headingSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-page .card,
+.home-page .stat-card,
+.home-page .blood-group-card,
+.home-page .step-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.home-page .card:hover,
+.home-page .stat-card:hover,
+.home-page .blood-group-card:hover,
+.home-page .step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.home-page .btn {
+  transition: all 0.3s ease;
+}
+
+.home-page .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(220, 53, 69, 0.2);
+}
+
+.home-page .hero-image {
+  animation: heroImage 1s ease;
+}
+
+@keyframes heroImage {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page,
+  .home-page * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
