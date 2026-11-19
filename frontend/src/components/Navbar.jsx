@@ -27,7 +27,6 @@ const Navbar = () => {
 
         {/* Navbar Links */}
         <div className="collapse navbar-collapse" id="mainNavbar">
-
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
             <li className="nav-item">
@@ -36,44 +35,63 @@ const Navbar = () => {
               </NavLink>
             </li>
 
+            {/* Find Donors */}
             {/* <li className="nav-item">
               <NavLink to="/find-donors" className="nav-link">
                 Find Donors
               </NavLink>
             </li> */}
 
+            {/* Become a Donor */}
             {/* <li className="nav-item">
               <NavLink to="/become-donor" className="nav-link">
                 Become a Donor
               </NavLink>
             </li> */}
 
-            {/* <li className="nav-item">
-              <NavLink to="/blood-requests" className="nav-link">
-                Blood Requests
+            {/* Donation Request */}
+            <li className="nav-item">
+              <NavLink to="/donation-request" className="nav-link">
+                Donation Request
               </NavLink>
-            </li> */}
-<li className="nav-item">
-  <NavLink to="/donation-request" className="nav-link">
-    Donation Request
-  </NavLink>
-</li>
+            </li>
+
+            {/* Donor Blood Scheduling */}
+            <li className="nav-item">
+              <NavLink to="/donor-scheduling" className="nav-link">
+                Donor Scheduling
+              </NavLink>
+            </li>
+
+            {/* Patient Blood Request */}
+            <li className="nav-item">
+              <NavLink to="/patient-blood-request" className="nav-link">
+                Request Blood
+              </NavLink>
+            </li>
+
+            {/* About */}
             <li className="nav-item">
               <NavLink to="/about" className="nav-link">
                 About
               </NavLink>
             </li>
 
+            {/* Contact */}
             <li className="nav-item">
               <NavLink to="/contact" className="nav-link">
                 Contact
               </NavLink>
             </li>
-<li className="nav-item">
-  <NavLink to="/profile" className="nav-link">
-    Profile
-  </NavLink>
-</li>
+
+            {/* Profile */}
+            <li className="nav-item">
+              <NavLink to="/profile" className="nav-link">
+                Profile
+              </NavLink>
+            </li>
+
+            {/* Donate Blood Button */}
             <li className="nav-item">
               <Link to="/become-donor" className="btn btn-danger px-4">
                 Donate Blood

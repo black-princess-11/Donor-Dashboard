@@ -1,5 +1,9 @@
 
 import React, { useState } from "react";
+import {
+  showSuccess,
+  showError,
+} from "../components/Notification";
 
 const DonationRequest = () => {
   const [formData, setFormData] = useState({
@@ -24,8 +28,6 @@ const DonationRequest = () => {
     }
   });
 
-  const [success, setSuccess] = useState("");
-
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -39,12 +41,12 @@ const DonationRequest = () => {
     e.preventDefault();
 
     if (!/^[6-9]\d{9}$/.test(formData.mobile)) {
-      alert("Please enter a valid 10-digit mobile number.");
+      showError("Please enter a valid 10-digit mobile number.");
       return;
     }
 
     if (Number(formData.units) < 1) {
-      alert("Please enter at least 1 unit.");
+      showError("Please enter at least 1 unit.");
       return;
     }
 
@@ -57,25 +59,32 @@ const DonationRequest = () => {
 
     const updatedRequests = [newRequest, ...requests];
 
-    setRequests(updatedRequests);
-    localStorage.setItem(
-      "donationRequests",
-      JSON.stringify(updatedRequests)
-    );
+    try {
+      localStorage.setItem(
+        "donationRequests",
+        JSON.stringify(updatedRequests)
+      );
 
-    setSuccess("Your donation request has been submitted successfully!");
+      setRequests(updatedRequests);
 
-    setFormData({
-      donorName: "",
-      mobile: "",
-      email: "",
-      bloodGroup: "",
-      units: "1",
-      city: "",
-      hospital: "",
-      availableDate: "",
-      message: "",
-    });
+      showSuccess(
+        "Your donation request has been submitted successfully!"
+      );
+
+      setFormData({
+        donorName: "",
+        mobile: "",
+        email: "",
+        bloodGroup: "",
+        units: "1",
+        city: "",
+        hospital: "",
+        availableDate: "",
+        message: "",
+      });
+    } catch {
+      showError("Unable to submit request. Please try again.");
+    }
   };
 
   return (
@@ -92,13 +101,10 @@ const DonationRequest = () => {
       </section>
 
       <div className="container py-5">
-
         <div className="row justify-content-center">
-
           <div className="col-lg-9">
 
             <div className="card border-0 shadow-sm rounded-4">
-
               <div className="card-body p-4 p-md-5">
 
                 <div className="text-center mb-4">
@@ -109,14 +115,7 @@ const DonationRequest = () => {
                   </p>
                 </div>
 
-                {success && (
-                  <div className="alert alert-success">
-                    {success}
-                  </div>
-                )}
-
                 <form onSubmit={handleSubmit}>
-
                   <div className="row g-3">
 
                     {/* Donor Name */}
@@ -285,7 +284,6 @@ const DonationRequest = () => {
                     </div>
 
                   </div>
-
                 </form>
 
               </div>
